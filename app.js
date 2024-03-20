@@ -1,9 +1,16 @@
-/*
+const express = require('express')
+const app = express()
+const port = 3000
+const Controller = require('./controllers')
 
-npx sequelize-cli model:generate --name Symptom --attributes name:string
-npx sequelize-cli model:generate --name User_Detail --attributes noAsuransi:string
-npx sequelize-cli model:generate --name Medical_Record --attributes history:string,date:date
-npx sequelize-cli model:generate --name Test_Lab --attributes pictureScan:string,result:string,UserId:integer
-npx sequelize-cli model:generate --name User --attributes username:string,email:string,password:string,role:string,Medical_RecordId:integer
-npx sequelize-cli model:generate --name Disease --attributes name:string,description:text,level:integer,SymptompId:integer,UserId:integer
-*/
+app.use(express.urlencoded({ extended: true }))
+app.set('view engine', 'ejs')
+
+app.get('/', Controller.home)
+app.get('/medical_record/:id', Controller.medicalRecord)
+// app.get('/medical_record/:id/add', Controller.medicalRecordAdd)
+// app.post('/medical_record/:id/add', Controller.medicalRecordAdd)
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})

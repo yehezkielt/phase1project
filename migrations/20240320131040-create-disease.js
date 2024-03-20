@@ -19,7 +19,6 @@ module.exports = {
       },
       level: {
         type: Sequelize.INTEGER,
-        min: 1
       },
       SymptompId: {
         type: Sequelize.INTEGER
@@ -35,6 +34,7 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       }
+      
     });
   },
   async down(queryInterface, Sequelize) {

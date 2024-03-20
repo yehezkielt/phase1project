@@ -10,8 +10,8 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Disease.belongsTo(models.User)
-      Disease.belongsTo(models.Symptom)
+    //   Disease.belongsTo(models.User, {foreignKey: userId})
+    //   Disease.belongsTo(models.Symptom, {foreignKey: SymptomId})
     }
   }
   Disease.init({
@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     description: DataTypes.TEXT,
     level: DataTypes.INTEGER,
     SymptompId: DataTypes.INTEGER,
-    UserId: DataTypes.INTEGE
+    UserId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Disease',

@@ -10,12 +10,13 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Medical_Record.hasMany(models.User)
+    //   Medical_Record.hasMany(models.User)
     }
   }
   Medical_Record.init({
     history: DataTypes.STRING,
-    date: DataTypes.DATE
+    date: DataTypes.DATE,
+    medicine: DataTypes.TEXT
   }, {
     sequelize,
     modelName: 'Medical_Record',

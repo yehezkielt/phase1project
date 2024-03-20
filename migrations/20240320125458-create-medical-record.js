@@ -10,9 +10,11 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       history: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       date: {
+        allowNull: false,
         type: Sequelize.DATE
       },
       createdAt: {
@@ -22,6 +24,9 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
+      },
+      medicine: {
+        type: Sequelize.TEXT
       }
     });
   },
