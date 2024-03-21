@@ -2,6 +2,7 @@
 const {
   Model
 } = require('sequelize');
+const medical_record = require('./medical_record');
 module.exports = (sequelize, DataTypes) => {
   class Disease extends Model {
     /**
@@ -10,6 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
+      Disease.belongsToMany(models.User, {through: models.Medical_Record})
+      Disease.hasMany(models.Medical_Record)
     //   Disease.belongsTo(models.User, {foreignKey: userId})
     //   Disease.belongsTo(models.Symptom, {foreignKey: SymptomId})
     }
