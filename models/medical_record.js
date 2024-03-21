@@ -13,14 +13,54 @@ module.exports = (sequelize, DataTypes) => {
       Medical_Record.belongsTo(models.User)
       Medical_Record.belongsTo(models.Disease)
     }
+
+    static async summary () {
+        const number = await Medical_Record.findOne({
+            raw: true,
+            attributes: [[sequelize.fn('COUNT', sequelize.col('id')), 'total']]
+        })
+        const result = `Jumlah seluruh medical record adalah ${number.total}`
+        return result
+    }
   }
   Medical_Record.init({
-    history: DataTypes.STRING,
+    history: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          notNull:{
+            msg: 'history Cant Be Empty'
+          },
+          notEmpty: {
+            msg: 'history Cant Be Empty'
+          }
+        }
+      },
+  
     date: DataTypes.DATE,
-    medicine: DataTypes.TEXT
+    medicine: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          notNull:{
+            msg: 'medicine Cant Be Empty'
+          },
+          notEmpty: {
+            msg: 'medicine Cant Be Empty'
+          }
+        }
+      },
+  
+    UserId : DataTypes.INTEGER,
+    DiseaseId : DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Medical_Record',
+        hooks: {
+          beforeCreate: (user, options) => {
+            user.medicine = 'panadol';
+          },
+        },
   });
   return Medical_Record;
 };

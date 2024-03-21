@@ -23,6 +23,19 @@
         </div>
     </nav>
     <br>
+    <div style="background-color: lemonchiffon;" class="d-flex">
+        <%=total%>
+        <button type="button" class="btn-close btn-close-black me-2 m-auto" aria-label="Close"></button>
+    </div>
+
+    <a class="btn btn-primary" href="/medical_record/<%= id %>/add" role="button">Add Medical Record</a>
+
+    <% if (msg) { %>
+        <div style="text-align: center; color: blueviolet;">
+          <h3><%= msg %></h3>  
+        </div>
+      <% } %>
+
     <table class="table">
         <thead>
           <tr>
@@ -32,16 +45,19 @@
             <th scope="col">Action</th>
           </tr>
         </thead>
+        <%data.map((el) => {%>
         <tbody>
           <tr>
-            <th><%=data.history%></th>
-            <td><%=data.date%></td>
-            <td><%=data.medicine%></td>
+            <th><%=el.history%></th>
+            <td><%=dateFormat(el.date)%></td>
+            <td><%=el.medicine%></td>
             <td>
-                <a class="btn btn-primary" href="/medical_record/<%=data.id%>/add" role="button">Add Medical Record</a>
+                <a class="btn btn-primary" href="/medical_record/<%=id%>/edit" role="button">Edit Medical Record</a>
+                <a class="btn btn-danger" href="/medical_record/<%=id%>/delete" role="button">Delete Medical Record</a>
             </td>
-          </tr>
-        </tbody>
+        </tr>
+    </tbody>
+        <%})%>
       </table>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>

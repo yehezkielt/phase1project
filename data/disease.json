@@ -1,0 +1,26 @@
+[{
+    "name": "piperacillin and tazobactam",
+    "description": "Mmr administration",
+    "level": 1,
+    "nameSymptom": "piperacillin and tazobactam"
+  }, {
+    "name": "Nifedipine",
+    "description": "Irrigation of ear",
+    "level": 2,
+    "nameSymptom": "Nifedipine"
+  }, {
+    "name": "Rizatriptan Benzoate",
+    "description": "Cystotomy NEC",
+    "level": 3,
+    "nameSymptom": "Rizatriptan Benzoate"
+  }, {
+    "name": "PSEUDOEPHEDRINE HYDROCHLORIDE, GUAIFENESIN, and DEXTROMETHORPHAN HYDROBROMIDE",
+    "description": "Stretching of fascia",
+    "level": 4,
+    "nameSymptom": "Aldex"
+  }, {
+    "name": "Amoxicillin and Clavulanate Potassium",
+    "description": "Mus/ten/fas/bur op NEC",
+    "level": 5,
+    "nameSymptom": "Amoxicillin and Clavulanate Potassium"
+  }]

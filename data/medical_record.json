@@ -1,16 +1,21 @@
 [{
     "history": "Citric Acid Monohydrate",
-    "date": "2023-04-21"
+    "date": "2023-04-21",
+    "medicine": "Sodium Fluoride"
   }, {
     "history": "Levothyroxine Sodium",
-    "date": "2023-05-11"
+    "date": "2023-05-11",
+    "medicine": "Sodium Fluoride"
   }, {
     "history": "Tolnaftate",
-    "date": "2023-11-09"
+    "date": "2023-11-09",
+    "medicine": "Sodium Fluoride"
   }, {
     "history": "TRICLOSAN",
-    "date": "2023-04-04"
+    "date": "2023-04-04",
+    "medicine": "Sodium Fluoride"
   }, {
     "history": "OCTINOXATE, TITANIUM DIOXIDE, and ZINC OXIDE",
-    "date": "2023-11-04"
+    "date": "2023-11-04",
+    "medicine": "Sodium Fluoride"
   }]

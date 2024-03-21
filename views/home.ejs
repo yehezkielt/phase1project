@@ -24,6 +24,10 @@
         </div>
     </nav>
     <br>
+    <form action="/" method="get">
+        <input type="text" name="search">
+        <input type="submit" value="Search">
+    </form>
     <table class="table">
         <thead>
           <tr>
@@ -32,22 +36,24 @@
             <th scope="col">Email</th>
             <th scope="col">Password</th>
             <th scope="col">Role</th>
-            <th scope="col">Medical_RecordId</th>
             <th scope="col">Action</th>
+            <th scope="col">History</th>
           </tr>
         </thead>
         <%data.forEach((el) => {%>
         <tbody>
           <tr>
             <th><%=el.id%></th>
-            <td><%=el.username%></td>
+            <td><%=el.usernameFormat%></td>
             <td><%=el.email%></td>
             <td><%=el.password%></td>
             <td><%=el.role%></td>
-            <td><%=el.Medical_RecordId%></td>
             <td>
-                <a class="btn btn-primary" href="/medical_record/<%=el.Medical_RecordId%>" role="button">See Medical Record</a>
+                <a class="btn btn-primary" href="/medical_record/<%=el.id%>" role="button">See Medical Record</a>
             </td>
+            <%el.Medical_Records.map((e)=>{%>
+            <td><%=e.history%></td>
+            <%})%>
           </tr>
         </tbody>
         <%})%>
