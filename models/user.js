@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       User.belongsToMany(models.Disease, {through: models.Medical_Record})
+      User.belongsToMany(models.Disease, {through: models.Medical_Record})
     //   User.hasMany(models.Disease)
     //   User.belongsTo(models.Medical_Record, {foreignKey: Medical_RecordsId})
       User.hasMany(models.Medical_Record)
@@ -43,8 +44,8 @@ module.exports = (sequelize, DataTypes) => {
             notNull: {
                 msg: `require of Position`
             },
-            validatePosition (value) {
-                if(this.role !== 'Patients' || this.role !== 'Doctors'){
+            validateRole (value) {
+                if(value !== 'Patients' || value !== 'Doctors'){
                     throw new Error(`role can only be a Patients or Doctors`)
                 }
             }

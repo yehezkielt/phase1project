@@ -141,6 +141,28 @@ class Controller {
             res.send(error.message)
         }
     }
+
+    static async registerForm (req, res){
+        try {
+            res.render('registerPage')
+        } catch (error) {
+            console.log(error)
+            res.send(error.message)
+        }
+    }
+
+    static async registerProcess (req, res){
+        try {
+            const {username, email, password, role} = req.body
+            User.create({
+                
+            })
+            res.redirect('/login')
+        } catch (error) {
+            console.log(error)
+            res.send(error.message)
+        }
+    }
 }
 
 module.exports = Controller
