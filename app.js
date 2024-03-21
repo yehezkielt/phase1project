@@ -7,6 +7,7 @@ app.use(express.urlencoded({ extended: true }))
 app.set('view engine', 'ejs')
 
 app.get('/', Controller.home)
+app.get('/login', Controller.login)
 app.get('/medical_record/:id', Controller.medicalRecord)
 // app.get('/medical_record/:id/add', Controller.medicalRecordAdd)
 // app.post('/medical_record/:id/add', Controller.medicalRecordAdd)
