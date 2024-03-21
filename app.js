@@ -1,9 +1,11 @@
 const express = require('express')
+const helmet = require('helmet')
 const app = express()
 const port = 3000
 const Controller = require('./controllers')
 
 app.use(express.urlencoded({ extended: true }))
+app.use(helmet())
 app.set('view engine', 'ejs')
 
 app.get('/', Controller.home)
