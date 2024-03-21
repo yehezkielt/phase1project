@@ -28,6 +28,15 @@ class Controller {
     //         res.send(error.message)
     //     }
     // }
+
+    static async login (req,res){
+        try {
+            res.render('loginPage')
+        } catch (error) {
+            console.log(error)
+            res.send(error.message)
+        }
+    }
 }
 
 module.exports = Controller
