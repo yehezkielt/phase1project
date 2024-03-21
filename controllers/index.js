@@ -40,6 +40,14 @@ class Controller {
             // res.send(id)
             await Medical_Record.create({history, date, medicine})
         } catch (error) {
+            res.send(error)
+        }
+    }
+    static async login (req,res){
+        try {
+            res.render('loginPage')
+        } catch (error) {
+            console.log(error)
             res.send(error.message)
         }
     }
