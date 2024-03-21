@@ -8,8 +8,8 @@ app.set('view engine', 'ejs')
 
 app.get('/', Controller.home)
 app.get('/medical_record/:id', Controller.medicalRecord)
-// app.get('/medical_record/:id/add', Controller.medicalRecordAdd)
-// app.post('/medical_record/:id/add', Controller.medicalRecordAdd)
+app.get('/medical_record/:id/add', Controller.medicalRecordAdd)
+app.post('/medical_record/:id/add', Controller.medicalRecordAddPost)
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)

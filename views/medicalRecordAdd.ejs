@@ -17,18 +17,22 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
+
                 </div>
             </div>
         </div>
     </nav>
     <br>
-    <form action="/action_page.php">
-        <label for="fname">History:</label><br>
-        <input type="text" id="fname" name="fname" value="John"><br>
-        <label for="lname">Date:</label><br>
-        <input type="text" id="lname" name="lname" value="Doe"><br><br>
-        <label for="lname">Medicine:</label><br>
-        <input type="text" id="lname" name="lname" value="Doe"><br><br>
+    <h3>Add Medical Record</h3>
+    <form action="/medical_record/<%= id %>/add" method="post">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username"><br>
+        <label for="history">History:</label><br>
+        <input type="text" id="history" name="history"><br>
+        <label for="date">Date:</label><br>
+        <input type="date" id="date" name="date" min="2023-01-01" max="2024-12-31" /><br>      
+        <label for="medicine">Medicine:</label><br>
+        <input type="text" id="medicine" name="medicine"><br><br>
         <input type="submit" value="Submit">
       </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
