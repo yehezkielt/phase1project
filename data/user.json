@@ -2,30 +2,25 @@
     "username": "Thomas McCarty",
     "email": "tmccarty0@elpais.com",
     "password": "ZUHY",
-    "role": "Patients",
-    "Medical_RecordId": 1
+    "role": "Patients"
   }, {
     "username": "Nelle Parkman",
     "email": "nparkman1@theatlantic.com",
     "password": "EVLA",
-    "role": "Patients",
-    "Medical_RecordId": 2
+    "role": "Patients"
   }, {
     "username": "Raviv Sitlinton",
     "email": "rsitlinton2@uiuc.edu",
     "password": "UKLL",
-    "role": "Patients",
-    "Medical_RecordId": 3
+    "role": "Patients"
   }, {
     "username": "Marlin Itscowicz",
     "email": "mitscowicz3@google.cn",
     "password": "FTTU",
-    "role": "Patients",
-    "Medical_RecordId": 4
+    "role": "Patients"
   }, {
     "username": "Gordan Extance",
     "email": "gextance4@networksolutions.com",
     "password": "HCMI",
-    "role": "Patients",
-    "Medical_RecordId": 5
+    "role": "Patients"
   }]
