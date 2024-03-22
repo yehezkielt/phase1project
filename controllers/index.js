@@ -32,9 +32,11 @@ class Controller {
             let { msg } = req.query;
             if (!msg) msg = "";
             const id = req.params.id
-            const data = await Medical_Record.findAll({where : { UserId : id}})
-            const total = await Medical_Record.summary()
-            res.render("medicalRecord", {data, id, dateFormat, msg, total})
+            const data = await Medical_Record.findAll({
+            where: { UserId: id }}
+        );
+        const total = await Medical_Record.summary()
+        res.render("medicalRecord", { data, id, dateFormat, msg, total})
         } catch (error) {
             res.send(error.message)
         }
@@ -75,16 +77,12 @@ class Controller {
             }else{
                 errors = errors.split(",")
             }
-            const { userId } = req.params
-          
+            const { userId } = req.params;
             const disease = await Disease.findAll()
-            const data = await Medical_Record.findAll({
-                where : {
-                    UserId : userId
-                }
-            })
-            // res.send({data})
-            res.render("medicalRecordEdit", {data, userId, disease})
+            const data = await Medical_Record.findAll({where: {
+                UserId: userId
+            }});
+            res.render("medicalRecordEdit", { data, userId, disease })
         } catch (error) {
             console.log(error);
             res.send(error.message)

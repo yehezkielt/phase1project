@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
     //   User.hasMany(models.Disease)
     //   User.belongsTo(models.Medical_Record, {foreignKey: Medical_RecordsId})
       User.hasMany(models.Medical_Record)
-      User.hasOne(models.User_Detail)
+      User.hasOne(models.User_Detail, {foreignKey:'User_DetailsId'})
     }
 
     get usernameFormat () {

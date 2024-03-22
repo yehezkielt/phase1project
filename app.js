@@ -3,8 +3,10 @@ const helmet = require('helmet')
 const app = express()
 const port = 3000
 const session = require('express-session')
+const helmet = require('helmet')
 const Controller = require('./controllers')
 
+app.use(helmet())
 app.use(express.urlencoded({ extended: true }))
 app.use(session({
   secret: 'keyboard cat',
