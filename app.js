@@ -15,7 +15,9 @@ app.use(session({
     sameSite: true 
   }
 }))
+app.use(helmet())
 app.set('view engine', 'ejs')
+
 
 
 app.get('/register', Controller.registerForm)
